@@ -67,12 +67,12 @@ RSpec.configure do |config|
 end
 
 VCR.configure do |config|
-  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
   config.hook_into :webmock
-  # config.ignore_request {|request| request.uri == 'https://accounts.google.com/o/oauth2/token' }
+  config.filter_sensitive_data('<weather_hidden_key>') { Rails.application.credentials.weather[:api_key] }
+  config.filter_sensitive_data('<mapquest_hidden_key>') { Rails.application.credentials.mapquest[:api_key] }
+  config.default_cassette_options = { record: :new_episodes }
   config.configure_rspec_metadata!
-  config.default_cassette_options = { re_record_interval: 7.days}
-  config.allow_http_connections_when_no_cassette = true
 end
 
 Shoulda::Matchers.configure do |config|
@@ -80,3 +80,4 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.library :rails
   end
+end
