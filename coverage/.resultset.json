@@ -177,6 +177,17 @@
           null
         ]
       },
+      "/Users/fadwil/turing/3mod/projects/sweater_weather/spec/factories/users.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/fadwil/turing/3mod/projects/sweater_weather/config/routes.rb": {
         "lines": [
           1,
@@ -184,6 +195,7 @@
           null,
           null,
           null,
+          1,
           1,
           1,
           1,
@@ -269,6 +281,50 @@
           2,
           2,
           null,
+          null
+        ]
+      },
+      "/Users/fadwil/turing/3mod/projects/sweater_weather/spec/models/user_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/fadwil/turing/3mod/projects/sweater_weather/app/models/user.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          4,
+          null,
+          null
+        ]
+      },
+      "/Users/fadwil/turing/3mod/projects/sweater_weather/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
           null
         ]
       },
@@ -397,7 +453,7 @@
           null
         ]
       },
-      "/Users/fadwil/turing/3mod/projects/sweater_weather/spec/requests/forecast_request_spec.rb": {
+      "/Users/fadwil/turing/3mod/projects/sweater_weather/spec/requests/api/v1/forecast_request_spec.rb": {
         "lines": [
           1,
           null,
@@ -442,6 +498,40 @@
           null,
           null,
           null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/fadwil/turing/3mod/projects/sweater_weather/spec/requests/api/v1/users_request_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
           null,
           null,
           null
@@ -553,8 +643,37 @@
           null,
           null
         ]
+      },
+      "/Users/fadwil/turing/3mod/projects/sweater_weather/app/controllers/api/v1/users_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/fadwil/turing/3mod/projects/sweater_weather/app/serializers/users_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null
+        ]
       }
     },
-    "timestamp": 1695517185
+    "timestamp": 1695575555
   }
 }

@@ -1,6 +1,6 @@
 class ForecastService
   def self.conn
-    Faraday.new(url: "http://api.weatherapi.com/") do |f|
+    Faraday.new(url: "https://api.weatherapi.com/") do |f|
       f.params["key"] = Rails.application.credentials.weather[:api_key]
     end
   end
