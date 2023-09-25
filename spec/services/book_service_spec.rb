@@ -3,7 +3,8 @@ require "rails_helper"
 RSpec.describe BookService do
   it "returns book json", :vcr do
     location = "Denver, CO"
-    books = BookService.search_books(location)
+    quantity = 5
+    books = BookService.search_books(location, quantity)
     expect(books).to be_a(Hash)
     expect(books).to have_key(:numFound)
     expect(books).to have_key(:docs)

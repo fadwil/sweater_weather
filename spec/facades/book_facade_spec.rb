@@ -3,12 +3,13 @@ require "rails_helper"
 RSpec.describe BookFacade do
   it "returns searched books", :vcr do
     location = "Denver, CO"
-    books = BookFacade.find_books(location)
-    expect(books).to be_a(Hash)
-    expect(books).to have_key(:numFound)
-    expect(books).to have_key(:docs)
-    expect(books[:docs][0]).to have_key(:isbn)
-    expect(books[:docs][0]).to have_key(:title)
-    expect(books[:docs][0]).to have_key(:publisher)
+    quantity = 5
+    books = BookFacade.find_books(location, quantity)
+    expect(books).to be_a(BookSearch)
+    expect(books.id).to eq("null")
+    expect(books.type).to eq("books")
+    expect(books.destination).to eq("Denver, CO")
+    expect(books.forecast.keys).to eq([:summary, :temperature])
+    expect(books.total_books_found).to eq(772)
   end
 end

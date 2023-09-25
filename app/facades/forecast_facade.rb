@@ -18,7 +18,7 @@ class ForecastFacade
       uvi: request[:uv],
       visibility: request[:vis_miles],
       condition: request[:condition][:text],
-      icon: request[:condition][:icon]
+      icon: request[:condition][:icon],
     }
   end
 
