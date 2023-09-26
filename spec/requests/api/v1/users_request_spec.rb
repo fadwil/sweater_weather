@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "users request" do
+RSpec.describe "users request", type: :request do
   describe "Post /api/v1/users" do
     it "creates a user with valid credentials" do
       data = {

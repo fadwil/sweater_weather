@@ -15,11 +15,13 @@ RSpec.describe "Sessions API", type: :request do
         
         post "/api/v1/sessions", headers: headers, params: JSON.generate(params)
 
+        parsed = JSON.parse(response.body)
+
         expect(response).to have_http_status(200)
-        expect(JSON.parse(response.body)["data"]["type"]).to eq("users")
-        expect(JSON.parse(response.body)["data"]["id"]).to eq(user.id.to_s)
-        expect(JSON.parse(response.body)["data"]["attributes"]["email"]).to eq(user.email)
-        expect(JSON.parse(response.body)["data"]["attributes"]["api_key"]).to eq(user.api_key)
+        expect(parsed["data"]["type"]).to eq("users")
+        expect(parsed["data"]["id"]).to eq(user.id.to_s)
+        expect(parsed["data"]["attributes"]["email"]).to eq(user.email)
+        expect(parsed["data"]["attributes"]["api_key"]).to eq(user.api_key)
       end
     end
 
@@ -35,8 +37,10 @@ RSpec.describe "Sessions API", type: :request do
         headers = { "CONTENT_TYPE" => "application/json" }
         
         post "/api/v1/sessions", headers: headers, params: JSON.generate(params)
+        parsed = JSON.parse(response.body)
+
         expect(response).to have_http_status(400) 
-        expect(JSON.parse(response.body)).to eq({ "error" => "Invalid credentials" })
+        expect(parsed).to eq({ "error" => "Invalid credentials" })
       end
     end
   end
