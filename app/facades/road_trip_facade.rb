@@ -29,7 +29,7 @@ class RoadTripFacade
     arrival_time = Time.now + travel_time.to_i.seconds
     forecast_data = ForecastService.get_forecast(coordinates)
   
-    if travel_time == "Impossible"
+    if travel_time == "impossible"
       weather_at_eta = {}
     else
       weather_at_eta = {

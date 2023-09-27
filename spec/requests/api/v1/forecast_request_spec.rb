@@ -27,7 +27,7 @@ RSpec.describe "/api/v1/forecast", type: :request do
                                                                       :condition,
                                                                       :icon
                                                                       ])
-
+      expect(data[:data][:attributes][:current_weather]).not_to have_key(:description)
       expect(data[:data][:attributes][:daily_weather]).to be_an(Array)
       expect(data[:data][:attributes][:daily_weather].first.keys).to eq([:date,
                                                                     :sunrise,
@@ -36,11 +36,13 @@ RSpec.describe "/api/v1/forecast", type: :request do
                                                                     :min_temp,
                                                                     :condition,
                                                                     :icon])
+      expect(data[:data][:attributes][:daily_weather].first).not_to have_key(:rain)
       expect(data[:data][:attributes][:hourly_weather]).to be_an(Array)
       expect(data[:data][:attributes][:hourly_weather].first.keys).to eq([:time,
                                                                     :temperature,
                                                                     :conditions,
                                                                     :icon])
+      expect(data[:data][:attributes][:hourly_weather].first).not_to have_key(:wind_speed)
     end
   end
 end
