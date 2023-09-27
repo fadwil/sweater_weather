@@ -73,6 +73,7 @@ VCR.configure do |config|
   config.filter_sensitive_data('<mapquest_hidden_key>') { Rails.application.credentials.mapquest[:api_key] }
   config.default_cassette_options = { record: :new_episodes }
   config.configure_rspec_metadata!
+  config.allow_http_connections_when_no_cassette = true
 end
 
 Shoulda::Matchers.configure do |config|
